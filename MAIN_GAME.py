@@ -184,10 +184,10 @@ class Map_generation:
                 b = pix[x, y][2]  # синего
 
                 if (r, g, b) == (255, 255, 255):
-                    self.map_city[y][x] = ['wall_2', '.']
+                    self.map_city[y][x] = ['wall_2', '#']
                 elif (r, g, b) == (237, 28, 36):
                     print(600)
-                    self.map_city[y][x] = ['wall_1', '.']
+                    self.map_city[y][x] = ['wall_1', '#']
                 elif (r, g, b) == (163, 73, 164):
                     print(600)
                     self.map_city[y][x] = ['f', '.']
@@ -215,7 +215,7 @@ class Map_generation:
                 else:
                     self.map_city[y][x] = ['wall_2', '.']
 
-        self.map_city[23][50] = ['Asphalt', '@']
+        self.map_city[40][50] = ['g', '@']
 
         print(1)
         self.write_in_txt()

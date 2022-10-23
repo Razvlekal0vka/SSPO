@@ -5,7 +5,7 @@ import os
 pygame.init()
 width, height = size = 960, 540
 screen = pygame.display.set_mode(size)
-pygame.display.set_caption('RoboWorld_One')
+pygame.display.set_caption('[INSERT ANY NAME]')
 screen.fill("black")
 clock = pygame.time.Clock()
 FPS = 60
@@ -36,7 +36,7 @@ class Boot(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__(all_sprites)
 
-        self.fon_image = pygame.transform.scale(load_image('boot.png'), (width, height))
+        self.fon_image = pygame.transform.scale(load_image('dispet.jpg'), (width, height))
         self.name_image = pygame.transform.scale(load_image('RBWOF.png'), (width, height))
         self.click_image = pygame.transform.scale(load_image('CIYWETG2.png'), (width, height))
         self.click_image_alf = self.name_image_alf = 255
@@ -59,9 +59,11 @@ all_sprites = pygame.sprite.Group()
 boot = Boot()
 
 if __name__ == '__main__':
+
     boot.start_screen_fon()
-    boot.start_screen_click()
     boot.start_screen_name()
+
+    '''boot.start_screen_click()'''
 
     while True:
         for event in pygame.event.get():

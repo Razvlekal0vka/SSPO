@@ -311,6 +311,11 @@ def generate_level(level):
                 new_player = Player(x, y)
             elif level[y][x][1] == 'd':
                 Tile(level[y][x][0], x, y)
+            elif level[y][x][1] == 'd':
+                Tile(level[y][x][0], x, y)
+            elif level[y][x][1] == 's':
+                Tile(level[y][x][0], x, y)
+                Object('s' + str(random.randint(1, 4)), x, y)
             elif level[y][x][1] == 'e':
                 Tile(level[y][x][0], x, y)
                 Emerald('emerald', x, y)
@@ -333,7 +338,7 @@ class Object(pygame.sprite.Sprite):
     def __init__(self, tile_type, pos_x, pos_y):
         super().__init__(object_group, all_sprites)
         self.image = tile_images[tile_type]
-        self.rect = self.image.get_rect().move(tile_width * pos_x, tile_height * pos_y)
+        self.rect = self.image.get_rect().move(tile_width * pos_x - 50, tile_height * pos_y - 50)
 
 
 class Player(pygame.sprite.Sprite):
@@ -381,7 +386,10 @@ tile_images = {'wall_1': load_image('world/wall_1.png'),
                'blue': load_image('world/перекресток синий.png'),
                'lg': load_image('world/разметка верт - светло-серый.png'),
                'gr': load_image('world/серый.png'),
-               's': load_image('world/pl_l.png')
+               's1': load_image('world/pll.png'),
+               's2': load_image('world/pl2.png'),
+               's3': load_image('world/pl3.png'),
+               's4': load_image('world/pl4.png'),
                }
 
 player_image_lr = load_image('pers/stand_1.png')

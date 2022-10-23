@@ -5,7 +5,6 @@ from enum import Enum
 from random import randint
 from tkinter import Image
 import pygame
-from PIL import Image
 from PIL import Image, ImageDraw
 
 pygame.init()
@@ -212,15 +211,9 @@ def terminate():
 
 
 def start_screen():
-    text = ['Незнакомец: "Нет времени обьяснять, найди фонтаны."',
-            'Незнакомец: "Следующие указания поступят позже, возможно..."',
-            'Вы: "Ну, ок."']
-    fon = pygame.transform.scale(load_image('else/boot.png'), (WIDTH, HEIGHT))
-    name_of_the_game = pygame.transform.scale(load_image('else/RBWOF.png'), (WIDTH, HEIGHT))
-    start_text = pygame.transform.scale(load_image('else/CIYWETG2.png'), (WIDTH, HEIGHT))
+    text = ['...']
+    fon = pygame.transform.scale(load_image('start/dispet.jpg'), (WIDTH, HEIGHT))
     screen.blit(fon, (0, 0))
-    screen.blit(name_of_the_game, (0, 0))
-    screen.blit(start_text, (0, 0))
     font = pygame.font.Font(None, 30)
     text_coord = 550
     t = 0
@@ -240,7 +233,6 @@ def start_screen():
                         text_coord += intro_rect.height
                         screen.blit(string_rendered, intro_rect)
                         pygame.display.flip()
-                        clock.tick(0.5)
                         t = 1
                 elif t == 1:
                     return

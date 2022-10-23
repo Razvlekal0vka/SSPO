@@ -10,7 +10,7 @@ from PIL import Image, ImageDraw
 
 
 pygame.init()
-size = WIDTH, HEIGHT = 1000, 640
+size = WIDTH, HEIGHT = 1600, 900
 screen = pygame.display.set_mode(size)
 FPS = 60
 clock = pygame.time.Clock()
@@ -188,7 +188,7 @@ class Map_generation:
                 else:
                     self.map_city[y][x] = ['floor_4', '.']
 
-        self.map_city[23][100] = ['floor_1', '@']
+        self.map_city[23][50] = ['floor_1', '@']
 
         print(1)
         self.write_in_txt()

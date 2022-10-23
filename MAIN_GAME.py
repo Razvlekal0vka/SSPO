@@ -240,7 +240,7 @@ def terminate():
 def start_screen():
     text = ['']
     fon = pygame.transform.scale(load_image('start/aeroport-samolety-vid-sverkhu.jpg'), (WIDTH, HEIGHT))
-    name = pygame.transform.scale(load_image('start/RBWOF.png'), (WIDTH, HEIGHT))
+    name = pygame.transform.scale(load_image('start/name.png'), (WIDTH, HEIGHT))
     screen.blit(fon, (0, 0))
     screen.blit(name, (0, 0))
     font = pygame.font.Font(None, 30)
@@ -400,7 +400,18 @@ tile_images = {'wall_1': load_image('world/wall_1.png'),
                'd2': load_image('world/d2.png'),
                'd3': load_image('world/d3.png'),
                'fountain': load_image('world/fountain.png'),
-               'emerald': load_image('world/emerald.png')}
+               'emerald': load_image('world/emerald.png'),
+
+               'asphalt': load_image('world/Asphalt.png'),
+               'g': load_image('world/асфальт - зеленый.png'),
+               'f': load_image('world/верхняя  т - фиолетовый.png'),
+               'b': load_image('world/впп - черный.png'),
+               'or': load_image('world/впп верт - оранжевый.png'),
+               'y': load_image('world/нижняя т - желтые.png'),
+               'blue': load_image('world/перекресток синий.png'),
+               'lg': load_image('world/разметка верт - светло-серый.png'),
+               'gr': load_image('world/серый.png'),
+               }
 
 player_image_lr = load_image('pers/stand_1.png')
 standing_player = {'stand_1': load_image('pers/stand_1.png'),

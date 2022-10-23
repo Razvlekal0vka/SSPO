@@ -184,10 +184,10 @@ class Map_generation:
                 b = pix[x, y][2]  # синего
 
                 if (r, g, b) == (255, 255, 255):
-                    self.map_city[y][x] = ['wall_2', '.']
+                    self.map_city[y][x] = ['wall_2', '#']
                 elif (r, g, b) == (237, 28, 36):
                     print(600)
-                    self.map_city[y][x] = ['wall_1', '.']
+                    self.map_city[y][x] = ['wall_1', '#']
                 elif (r, g, b) == (163, 73, 164):
                     print(600)
                     self.map_city[y][x] = ['f', '.']
@@ -215,7 +215,7 @@ class Map_generation:
                 else:
                     self.map_city[y][x] = ['wall_2', '.']
 
-        self.map_city[23][50] = ['Asphalt', '@']
+        self.map_city[40][50] = ['g', '@']
 
         print(1)
         self.write_in_txt()
@@ -373,36 +373,6 @@ emeralds_group = pygame.sprite.Group()
 
 tile_images = {'wall_1': load_image('world/wall_1.png'),
                'wall_2': load_image('world/wall_2.png'),
-               'Asphalt': load_image('world/Asphalt.png'),
-               'floor_1': load_image('world/floor_1.png'),
-               'floor_2': load_image('world/floor_2.png'),
-               'floor_3': load_image('world/floor_3.png'),
-               'floor_4': load_image('world/floor_4.png'),
-               'yellow_house': load_image('houses/yellow_house/yellow_house.png'),
-               'yellow_house_floor': load_image('houses/yellow_house/yellow_house_floor.png'),
-               'maze_house': load_image('houses/fire_maze/maze_house.png'),
-               'maze_floor_1': load_image('houses/fire_maze/maze_floor_1.png'),
-               'maze_floor_2': load_image('houses/fire_maze/maze_floor_2.png'),
-               'maze_floor_3': load_image('houses/fire_maze/maze_floor_3.png'),
-               'maze_floor_4': load_image('houses/fire_maze/maze_floor_4.png'),
-               'maze_floor_5': load_image('houses/fire_maze/maze_floor_5.png'),
-               'dark_maze_house_1': load_image('houses/dark_maze/dark_maze_house_1.png'),
-               'dark_maze_house_2': load_image('houses/dark_maze/dark_maze_house_2.png'),
-               'dark_maze_floor_1': load_image('houses/dark_maze/dark_maze_floor_1.png'),
-               'dark_maze_floor_2': load_image('houses/dark_maze/dark_maze_floor_2.png'),
-               'dark_maze_floor_3': load_image('houses/dark_maze/dark_maze_floor_3.png'),
-               'dark_maze_floor_4': load_image('houses/dark_maze/dark_maze_floor_4.png'),
-               'sh': load_image('houses/start_house/sh.png'),
-               'passage': load_image('houses/else/passage.png'),
-               'start_passage': load_image('houses/else/passage.png'),
-               'start_floor': load_image('houses/start_house/start_floor.png'),
-               'd1': load_image('world/d1.png'),
-               'd2': load_image('world/d2.png'),
-               'd3': load_image('world/d3.png'),
-               'fountain': load_image('world/fountain.png'),
-               'emerald': load_image('world/emerald.png'),
-
-               'asphalt': load_image('world/Asphalt.png'),
                'g': load_image('world/асфальт - зеленый.bmp'),
                'f': load_image('world/верхняя  т - фиолетовый.png'),
                'b': load_image('world/впп - черный.png'),
@@ -431,7 +401,6 @@ running_player = {'run_1': load_image('pers/run_1.png'),
                   'run_8': load_image('pers/run_8.png'),
                   'run_9': load_image('pers/run_9.png')}
 
-emerald_image = load_image('world/emerald.png')
 tile_width = tile_height = STEP = 50
 
 if __name__ == '__main__':

@@ -449,6 +449,9 @@ if __name__ == '__main__':
         keys = pygame.key.get_pressed()
         allowed_cells = ['.', 'e', '@', 'f1']
 
+        if keys[pygame.K_ESCAPE]:
+            terminate()
+
         '''ДВИЖЕНИЕ ИГРОКА'''
 
         if keys[pygame.K_d] and keys[pygame.K_w]:

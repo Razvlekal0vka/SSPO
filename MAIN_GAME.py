@@ -403,7 +403,7 @@ tile_images = {'wall_1': load_image('world/wall_1.png'),
                'emerald': load_image('world/emerald.png'),
 
                'asphalt': load_image('world/Asphalt.png'),
-               'g': load_image('world/асфальт - зеленый.png'),
+               'g': load_image('world/асфальт - зеленый.bmp'),
                'f': load_image('world/верхняя  т - фиолетовый.png'),
                'b': load_image('world/впп - черный.png'),
                'or': load_image('world/впп верт - оранжевый.png'),

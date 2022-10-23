@@ -165,7 +165,7 @@ class Map_generation:
     def filling_out_the_city_list(self):
 
         k = 0
-        image = Image.open('data/AirposrtDes.png')  # Открываем изображение
+        image = Image.open('data/111.png')  # Открываем изображение
         draw = ImageDraw.Draw(image)  # Создаем инструмент для рисования
         width = image.size[0]  # Определяем ширину
         height = image.size[1]  # Определяем высоту
@@ -183,11 +183,8 @@ class Map_generation:
                 g = pix[x, y][1]  # зелёного
                 b = pix[x, y][2]  # синего
 
-                if (r, g, b) == (107, 107, 107):
+                if (r, g, b) == (255, 255, 255):
                     self.map_city[y][x] = ['Asphalt', '.']
-                    if k == 0:
-                        self.map_city[y][x] = ['floor_1', '@']
-                        k = 1
                 elif (r, g, b) == (255, 0, 0):
                     print(600)
                     self.map_city[y][x] = ['wall_1', '#']

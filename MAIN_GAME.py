@@ -186,7 +186,7 @@ class Map_generation:
 
 
                 if randint(1, 100) > 90:
-                    hh = 'd'
+                    hh = 's'
                 else:
                     hh = '.'
 

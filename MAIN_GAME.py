@@ -184,17 +184,36 @@ class Map_generation:
                 b = pix[x, y][2]  # синего
 
                 if (r, g, b) == (255, 255, 255):
-                    self.map_city[y][x] = ['Asphalt', '.']
+                    self.map_city[y][x] = ['wall_2', '#']
                 elif (r, g, b) == (255, 0, 0):
                     print(600)
                     self.map_city[y][x] = ['wall_1', '#']
-                elif r > 200 and g < 20 and b < 20:
+                elif (r, g, b) == (163, 73, 164):
                     print(600)
-                    self.map_city[y][x] = ['wall_1', '#']
-                elif (r, g, b) == (255, 255, 255):
-                    self.map_city[y][x] = ['floor_3', '.']
+                    self.map_city[y][x] = ['f', '.']
+                elif (r, g, b) == (34, 177, 76):
+                    print(600)
+                    self.map_city[y][x] = ['g', '.']
+                elif (r, g, b) == (0, 0, 0):
+                    print(600)
+                    self.map_city[y][x] = ['b', '.']
+                elif (r, g, b) == (255, 127, 39):
+                    print(600)
+                    self.map_city[y][x] = ['or', '.']
+                elif (r, g, b) == (255, 242, 0):
+                    print(600)
+                    self.map_city[y][x] = ['y', '.']
+                elif (r, g, b) == (63, 72, 204):
+                    print(600)
+                    self.map_city[y][x] = ['blue', '.']
+                elif (r, g, b) == (195, 195, 195):
+                    print(600)
+                    self.map_city[y][x] = ['lg', '.']
+                elif (r, g, b) == (127, 127, 127):
+                    print(600)
+                    self.map_city[y][x] = ['g', '.']
                 else:
-                    self.map_city[y][x] = ['Asphalt', '.']
+                    self.map_city[y][x] = ['wall_2', '.']
 
         self.map_city[23][50] = ['Asphalt', '@']
 

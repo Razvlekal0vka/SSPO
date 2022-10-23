@@ -184,7 +184,7 @@ class Map_generation:
                 g = pix[x, y][1]  # зелёного
                 b = pix[x, y][2]  # синего
 
-                if randint(1, 100) > 90:
+                if randint(1, 1000) > 950:
                     hh = 's'
                 else:
                     hh = '.'
@@ -334,7 +334,7 @@ class Object(pygame.sprite.Sprite):
     def __init__(self, tile_type, pos_x, pos_y):
         super().__init__(object_group, all_sprites)
         self.image = tile_images[tile_type]
-        self.rect = self.image.get_rect().move(tile_width * pos_x - 75, tile_height * pos_y - 50)
+        self.rect = self.image.get_rect().move(tile_width * pos_x - 50, tile_height * pos_y - 50)
 
 
 class Player(pygame.sprite.Sprite):

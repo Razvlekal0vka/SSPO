@@ -184,7 +184,6 @@ class Map_generation:
                 g = pix[x, y][1]  # зелёного
                 b = pix[x, y][2]  # синего
 
-
                 if randint(1, 100) > 90:
                     hh = 's'
                 else:
@@ -254,7 +253,6 @@ def start_screen():
     text_coord = 550
     t = 0
 
-
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -311,6 +309,9 @@ def generate_level(level):
                 new_player = Player(x, y)
             elif level[y][x][1] == 'd':
                 Tile(level[y][x][0], x, y)
+            elif level[y][x][1] == 's':
+                Tile(level[y][x][0], x, y)
+                Object('s', x, y)
             elif level[y][x][1] == 'e':
                 Tile(level[y][x][0], x, y)
                 Emerald('emerald', x, y)

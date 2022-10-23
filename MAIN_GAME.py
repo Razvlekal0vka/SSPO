@@ -30,25 +30,30 @@ class WALL_DIRECTION(Enum):
 
 class Map:
     def __init__(self):
+
         self.width = 25
         self.height = 25
         self.map = [[0 for x in range(self.width)] for y in range(self.height)]
 
     def setMap(self, x, y, value):
+
         if value == MAP_ENTRY_TYPE.MAP_EMPTY:
             self.map[y][x] = 0
         elif value == MAP_ENTRY_TYPE.MAP_BLOCK:
             self.map[y][x] = 1
 
     def isMovable(self, x, y):
+
         return self.map[y][x] != 1
 
     def isValid(self, x, y):
+
         if x < 0 or x >= self.width or y < 0 or y >= self.height:
             return False
         return True
 
     def showMap(self):
+
         map = []
         for row in self.map:
             s = ''
@@ -71,6 +76,7 @@ class Map:
 
 def recursiveDivision(map, x, y, width, height, wall_value):
     def getWallIndex(start, length):
+
         assert length >= 3
         wall_index = randint(start + 1, start + length - 2)
         if wall_index % 2 == 1:
@@ -78,6 +84,7 @@ def recursiveDivision(map, x, y, width, height, wall_value):
         return wall_index
 
     def generateHoles(map, x, y, width, height, wall_x, wall_y):
+
         holes = []
 
         hole_entrys = [(randint(x, wall_x - 1), wall_y), (randint(wall_x + 1, x + width - 1), wall_y),
@@ -135,6 +142,7 @@ def Error_of_creating_maze():
 
 class Map_generation:
     def __init__(self):
+
         print('Инициализация')
         self.number_of_buildings = 3
         self.number_of_streets = self.number_of_buildings + 1
@@ -155,6 +163,7 @@ class Map_generation:
         self.filling_out_the_city_list()
 
     def filling_out_the_city_list(self):
+
         k = 0
         image = Image.open('data/AirposrtDes.png')  # Открываем изображение
         draw = ImageDraw.Draw(image)  # Создаем инструмент для рисования
@@ -197,11 +206,13 @@ class Map_generation:
 
     def write_in_txt(self):
         print(2)
+
         with open('test_data/Test_map.txt', 'w') as writing_file:
             for element in self.map_city:
                 print(element, file=writing_file)
 
     def map_level(self):
+
         return self.map_city
 
 
@@ -211,12 +222,15 @@ def terminate():
 
 
 def start_screen():
-    text = ['...']
-    fon = pygame.transform.scale(load_image('start/dispet.jpg'), (WIDTH, HEIGHT))
+    text = ['']
+    fon = pygame.transform.scale(load_image('start/aeroport-samolety-vid-sverkhu.jpg'), (WIDTH, HEIGHT))
+    name = pygame.transform.scale(load_image('start/RBWOF.png'), (WIDTH, HEIGHT))
     screen.blit(fon, (0, 0))
+    screen.blit(name, (0, 0))
     font = pygame.font.Font(None, 30)
     text_coord = 550
     t = 0
+
 
     while True:
         for event in pygame.event.get():

@@ -311,13 +311,6 @@ def generate_level(level):
                 new_player = Player(x, y)
             elif level[y][x][1] == 'd':
                 Tile(level[y][x][0], x, y)
-                n = random.randint(1, 5)
-                if n == 5:
-                    Tile(str(level[y][x][1]) + str(1), x, y)
-                elif 2 <= n <= 4:
-                    Tile(str(level[y][x][1]) + str(2), x, y)
-                else:
-                    Tile(str(level[y][x][1]) + str(2), x, y)
             elif level[y][x][1] == 'e':
                 Tile(level[y][x][0], x, y)
                 Emerald('emerald', x, y)
@@ -388,6 +381,7 @@ tile_images = {'wall_1': load_image('world/wall_1.png'),
                'blue': load_image('world/перекресток синий.png'),
                'lg': load_image('world/разметка верт - светло-серый.png'),
                'gr': load_image('world/серый.png'),
+               's': load_image('world/pl_l.png')
                }
 
 player_image_lr = load_image('pers/stand_1.png')

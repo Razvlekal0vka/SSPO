@@ -10,7 +10,7 @@ from PIL import Image, ImageDraw
 
 
 pygame.init()
-size = WIDTH, HEIGHT = 1000, 640
+size = WIDTH, HEIGHT = 1600, 900
 screen = pygame.display.set_mode(size)
 FPS = 60
 clock = pygame.time.Clock()
@@ -177,18 +177,22 @@ class Map_generation:
                 b = pix[x, y][2]  # синего
 
                 if (r, g, b) == (107, 107, 107):
-                    self.map_city[y][x] = ['floor_1', '.']
+                    self.map_city[y][x] = ['Asphalt', '.']
                     if k == 0:
                         self.map_city[y][x] = ['floor_1', '@']
                         k = 1
-                if (r, g, b) == (255, 0, 0):
-                    self.map_city[y][x] = ['floor_2', '.']
-                if (r, g, b) == (255, 255, 255):
+                elif (r, g, b) == (255, 0, 0):
+                    print(600)
+                    self.map_city[y][x] = ['wall_1', '#']
+                elif r > 200 and g < 20 and b < 20:
+                    print(600)
+                    self.map_city[y][x] = ['wall_1', '#']
+                elif (r, g, b) == (255, 255, 255):
                     self.map_city[y][x] = ['floor_3', '.']
                 else:
-                    self.map_city[y][x] = ['floor_4', '.']
+                    self.map_city[y][x] = ['Asphalt', '.']
 
-        self.map_city[23][100] = ['floor_1', '@']
+        self.map_city[23][50] = ['Asphalt', '@']
 
         print(1)
         self.write_in_txt()
@@ -349,6 +353,7 @@ emeralds_group = pygame.sprite.Group()
 
 tile_images = {'wall_1': load_image('world/wall_1.png'),
                'wall_2': load_image('world/wall_2.png'),
+               'Asphalt': load_image('world/Asphalt.png'),
                'floor_1': load_image('world/floor_1.png'),
                'floor_2': load_image('world/floor_2.png'),
                'floor_3': load_image('world/floor_3.png'),

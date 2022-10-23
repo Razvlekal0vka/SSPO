@@ -185,7 +185,7 @@ class Map_generation:
                 b = pix[x, y][2]  # синего
 
 
-                if randint(1, 1000) > 950:
+                if randint(1, 1000) > 951:
                     hh = 's'
                 else:
                     hh = '.'

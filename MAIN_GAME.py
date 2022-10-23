@@ -1,3 +1,4 @@
+import msvcrt
 import os
 import random
 import sys
@@ -7,7 +8,6 @@ from tkinter import Image
 import pygame
 from PIL import Image
 from PIL import Image, ImageDraw
-
 
 pygame.init()
 size = WIDTH, HEIGHT = 1600, 900
@@ -245,7 +245,6 @@ def start_screen():
         clock.tick(FPS * 2)
 
 
-
 def load_image(name, color_key=None):
     fullname = os.path.join('test_data/', name)
     if not os.path.isfile(fullname):
@@ -427,7 +426,7 @@ if __name__ == '__main__':
 
 
     lev = Map_generation()
- #   lev.rendering()  # Сохраняем изображение карты
+    #   lev.rendering()  # Сохраняем изображение карты
     lev.write_in_txt()  # Сохраняем список в текстовый файл
     level = lev.map_level()  # Считываем карту
     start_screen()
@@ -443,6 +442,9 @@ if __name__ == '__main__':
 
         keys = pygame.key.get_pressed()
         allowed_cells = ['.', 'e', '@', 'f1']
+
+        if keys[pygame.K_ESCAPE]:  # если зажата клавиша
+            running = False  # завершаем программу
 
         '''ДВИЖЕНИЕ ИГРОКА'''
 

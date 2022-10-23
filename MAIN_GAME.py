@@ -6,6 +6,7 @@ from random import randint
 from tkinter import Image
 import pygame
 from PIL import Image, ImageDraw
+import random
 
 pygame.init()
 size = WIDTH, HEIGHT = 1600, 900
@@ -183,6 +184,12 @@ class Map_generation:
                 g = pix[x, y][1]  # зелёного
                 b = pix[x, y][2]  # синего
 
+
+                if randint(1, 100) > 90:
+                    hh = 'd'
+                else:
+                    hh = '.'
+
                 if (r, g, b) == (255, 255, 255):
                     self.map_city[y][x] = ['wall_2', '#']
                 elif (r, g, b) == (237, 28, 36):
@@ -190,30 +197,30 @@ class Map_generation:
                     self.map_city[y][x] = ['wall_1', '#']
                 elif (r, g, b) == (163, 73, 164):
                     print(600)
-                    self.map_city[y][x] = ['f', '.']
+                    self.map_city[y][x] = ['f', hh]
                 elif (r, g, b) == (34, 177, 76):
                     print(600)
-                    self.map_city[y][x] = ['g', '.']
+                    self.map_city[y][x] = ['g', hh]
                 elif (r, g, b) == (0, 0, 0):
                     print(600)
-                    self.map_city[y][x] = ['b', '.']
+                    self.map_city[y][x] = ['b', hh]
                 elif (r, g, b) == (255, 127, 39):
                     print(600)
-                    self.map_city[y][x] = ['or', '.']
+                    self.map_city[y][x] = ['or', hh]
                 elif (r, g, b) == (255, 242, 0):
                     print(600)
-                    self.map_city[y][x] = ['y', '.']
+                    self.map_city[y][x] = ['y', hh]
                 elif (r, g, b) == (63, 72, 204):
                     print(600)
-                    self.map_city[y][x] = ['blue', '.']
+                    self.map_city[y][x] = ['blue', hh]
                 elif (r, g, b) == (195, 195, 195):
                     print(600)
-                    self.map_city[y][x] = ['lg', '.']
+                    self.map_city[y][x] = ['lg', hh]
                 elif (r, g, b) == (127, 127, 127):
                     print(600)
-                    self.map_city[y][x] = ['g', '.']
+                    self.map_city[y][x] = ['g', hh]
                 else:
-                    self.map_city[y][x] = ['wall_2', '.']
+                    self.map_city[y][x] = ['wall_2', hh]
 
         self.map_city[40][50] = ['g', '@']
 
